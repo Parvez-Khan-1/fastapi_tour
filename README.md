@@ -29,5 +29,26 @@ venv\Scripts\activate
 #### Run your app
 
 ```commandline
-uvicorn src.main:app --repload
+uvicorn src.main:app --reload
+```
+
+### Interesting Features
+
+#### Routers:
+
+- Separate operations into multiple files
+- Share prefix between multiple operations
+- Share tags
+
+```commandline
+from fastapi import APIRouter
+router=APIRouter(prefix="/blog", tags=["blog"])
+
+@router.get("/")
+```
+
+```commandline
+from routers import blog
+app = FastAPI()
+app.include_router(blog.router)
 ```
