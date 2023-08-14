@@ -1,6 +1,6 @@
-from src.db.database import Base
+from db.database import Base
 from sqlalchemy import Column
-from sqlalchemy.types import Integer, String, Boolean
+from sqlalchemy.types import Integer, String
 
 
 class DBUser(Base):

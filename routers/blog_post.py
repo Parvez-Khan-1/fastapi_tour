@@ -46,13 +46,11 @@ def create_comment(blog: BlogModel, id: int,
                                        regex='^[a-z\s]*$'
                                        ),
                    v: Optional[List[str]] = Query(['1.0', '1.1', '1.2']),
-                   comment_id: int = Path(None, le=5)
                    ):
     return {
         'blog': blog,
         'id': id,
         'comment_title': comment_title,
         'content': content,
-        'version': v,
-        'comment_id': comment_id
+        'version': v
     }
