@@ -29,7 +29,7 @@ venv\Scripts\activate
 #### Run your app
 
 ```commandline
-uvicorn src.main:app --reload
+uvicorn main:app --reload
 ```
 
 ### Interesting Features

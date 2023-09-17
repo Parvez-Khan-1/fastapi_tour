@@ -19,4 +19,12 @@ def create_user(request: UserBase, db: Session = Depends(get_db)):
 def get_all_users(db: Session = Depends(get_db)):
     return db_user.get_all_users(db)
 
-# Update
+
+@router.get("/{id}", response_model=UserDisplay)
+def get_user(id, db: Session = Depends(get_db)):
+    return db_user.get_user(db, id)
+
+
+@router.post("/{id}/update")
+def update_user(id: int, request: UserBase, db: Session = Depends(get_db)):
+    return db_user.update_user(db, id, request)
